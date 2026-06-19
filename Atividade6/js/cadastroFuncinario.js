@@ -1,0 +1,3 @@
+function cadastrarFuncionario() {
+    let 
+}
