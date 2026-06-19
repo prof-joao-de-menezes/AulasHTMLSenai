@@ -6,4 +6,11 @@ function cadastrarFuncionario() {
     console.log(nome)
     console.log(horas)
     console.log(cargo)
+
+    /*
+        Registre os funcionários cadastrados e mostre cada funcionário cadastrado na
+        sua página HTML
+
+        Pode inseri-los dentro de uma sessão, tabela, paragrafo... A sua escolha.
+    */
 }
