@@ -19,4 +19,10 @@ function imprimirNome() {
         "Departamento: " + departamento + "\n" +
         "Acesso Restrito: " + temAcessoRestrito
     );
+
+    if (temAcessoRestrito) { /// se (verdadeiro)
+        window.location.href = "pages/gerente.html"
+    } else {
+        window.location.href = "pages/funcionario.html"
+    }
 }
