@@ -3,7 +3,7 @@ function cadastrarFuncionario() {
     let horas = document.getElementById("horas-funcionario").value;
     let cargo = document.getElementById("cargo-funcionario").value;
 
-    if (nome === "" || cargo === "") {
+    if (nome.trim() === "" || cargo.trim() === "") {
         alert("Por favor, preencha todos os campos antes de cadastrar.");
         return;
     }
