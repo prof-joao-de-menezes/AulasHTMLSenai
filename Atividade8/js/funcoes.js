@@ -15,3 +15,10 @@ function salvarHistorico(nomeDaFuncao, num1, num2, resultado) {
     console.log("Resultado: " + resultado);
     console.log("--------------------------------------");
 }
+
+
+/*
+    Criar funções de sutração, multiplicação e divisão
+
+    Modificar a função de salvarHistórico, para salvar em localStorage
+*/
