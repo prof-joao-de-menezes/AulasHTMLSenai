@@ -1,23 +1,39 @@
-function soma(){
+function soma() {
     let primeiroNumero = document.getElementById("primeiro-numero").value;
     let segundoNumero = document.getElementById("segundo-numero").value;
 
     let resultado = Number(primeiroNumero) + Number(segundoNumero);
 
-    document.getElementById("resultado").innerText = resultado
+    document.getElementById("resultado").innerText = resultado;
+
+    salvarHistorico("Soma",primeiroNumero, segundoNumero, resultado)
 }
 
-function salvarHistorico() {
-    /*
-        Hisórico de função utilizada
-        Ex -> Função: soma
+function subtracao() {
+    let primeiroNumero = document.getElementById("primeiro-numero").value;
+    let segundoNumero = document.getElementById("segundo-numero").value;
 
-        Histórico de números digitados
-        Ex -> Primeiro numero: 10, SegundoNumero: 10
+    let resultado = Number(primeiroNumero) - Number(segundoNumero);
 
-        Histórico de resultados obtidos:
-        Ex -> 20
+    document.getElementById("resultado").innerText = resultado;
 
-        apresentado num console.log
-    */
+    salvarHistorico("Soma",primeiroNumero, segundoNumero, resultado)
+}
+
+function divisao() {
+    let primeiroNumero = document.getElementById("primeiro-numero").value;
+    let segundoNumero = document.getElementById("segundo-numero").value;
+
+    let resultado = Number(primeiroNumero) / Number(segundoNumero);
+
+    document.getElementById("resultado").innerText = resultado;
+
+    salvarHistorico("Soma",primeiroNumero, segundoNumero, resultado)
+}
+
+function salvarHistorico(nomeDaFuncao, num1, num2, resultado) {
+    console.log("Função: " + nomeDaFuncao);
+    console.log("Primeiro numero: " + num1 + ", SegundoNumero: " + num2);
+    console.log("Resultado: " + resultado);
+    console.log("--------------------------------------");
 }
