@@ -60,3 +60,12 @@ function salvarHistorico(nomeDaFuncao, num1, num2, resultado) {
 
     localStorage.setItem("historicoCalculos", JSON.stringify(historicoLocal));
 }
+
+function apagarLocalStorage(){
+
+    let confirmaApagar = window.confirm("Você deseja apagar seu histórico?")
+    
+    if(confirmaApagar){
+        localStorage.clear();
+    }
+}
