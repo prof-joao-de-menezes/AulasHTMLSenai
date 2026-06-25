@@ -69,3 +69,18 @@ function apagarLocalStorage(){
         localStorage.clear();
     }
 }
+
+/*
+    Nova função de calculo de imposto de importação
+
+    Se o produto custar menos que $50 (cinquenta dolares)
+    Você vai ter que pagar o valor produto, mais 20%
+
+    Se o produto custar mais do que $50
+    Você vai ter que pagar o valor do produto +20%, depois mais 90% sobre o resultado
+
+    Seja salvo num novo objeto, dentro do local storage, seu hitórico de coversão.
+
+    Ex: histórico de calculos matemáticos, e histórico de conversões
+
+ */
