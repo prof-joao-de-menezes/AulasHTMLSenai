@@ -61,26 +61,47 @@ function salvarHistorico(nomeDaFuncao, num1, num2, resultado) {
     localStorage.setItem("historicoCalculos", JSON.stringify(historicoLocal));
 }
 
-function apagarLocalStorage(){
+function apagarLocalStorage() {
 
     let confirmaApagar = window.confirm("Você deseja apagar seu histórico?")
-    
-    if(confirmaApagar){
+
+    if (confirmaApagar) {
         localStorage.clear();
     }
 }
 
-/*
-    Nova função de calculo de imposto de importação
+function calculoImposto() {
+    let valorInicial = document.getElementById("valor-inicial").value;
+    let valorComImposto;
 
-    Se o produto custar menos que $50 (cinquenta dolares)
-    Você vai ter que pagar o valor produto, mais 20%
+    let valorNum = Number(valorInicial);
 
-    Se o produto custar mais do que $50
-    Você vai ter que pagar o valor do produto +20%, depois mais 90% sobre o resultado
+    if(valorNum <= 50) {
+        valorComImposto = valorNum + (valorNum * 0.20);
+    } else {
+        let primeiraTaxa = valorNum + (valorNum * 0.20);
+        valorComImposto = primeiraTaxa + (primeiraTaxa * 0.90);
+    }
 
-    Seja salvo num novo objeto, dentro do local storage, seu hitórico de coversão.
+    valorComImposto = Number(valorComImposto);
 
-    Ex: histórico de calculos matemáticos, e histórico de conversões
+    salvarHistoricoImposto(valorInicial, valorComImposto);
 
- */
+    document.getElementById("resultado-imposto").innerText = valorComImposto;
+}
+
+function salvarHistoricoImposto(valorInicial, valorComImposto) {
+    console.log("Valor inicial: " + valorInicial);
+    console.log("valor com imposto: " + valorComImposto);
+    console.log("--------------------------------------");
+
+    let operacao = {
+        valorInicial,
+        valorComImposto
+    };
+
+    let historicoLocal = JSON.parse(localStorage.getItem("historicoImposto")) || [];
+    historicoLocal.push(operacao);
+
+    localStorage.setItem("historicoImposto", JSON.stringify(historicoLocal));
+}
