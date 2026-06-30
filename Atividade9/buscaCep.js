@@ -19,6 +19,5 @@ function buscarCep() {
         document.getElementById("uf").value = dados.uf;
     })
 }
-
 const campoCep = document.getElementById("cep");
 campoCep.addEventListener('focusout', buscarCep);
